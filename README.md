@@ -2,8 +2,8 @@
 | columm            | type      | options
 | ------------------| --------- | ---------
 | nickname          | string    | null: false
-| email             | string    | null: false
-| password          | string    | null: false
+| email             | string    | null: false, unique:true
+| encrypted_pa​​ssword| string    | null: false
 | firstname_kanji   | string    | null: false
 | lastname_kanji    | string    | null: false
 | firstname_kana    | string    | null: false
@@ -18,12 +18,17 @@
 
 ## itemsテーブル
 
-| columm              | type       | options
-| ------------------- | ---------  | ---------
-| name                | string     | null: false
-| content             | text       | null: false
-| price               | integer    | null: false
-| user                | references | null: false,foreign_key: true
+| columm               | type       | options
+| -------------------  | ---------  | ---------
+| name                 | string     | null: false
+| content              | text       | null: false
+| price                | integer    | null: false
+| user                 | references | null: false,foreign_key: true
+| category_id          | referenees | null: false
+| condition_id         | references | null: false
+| shipping_fee_payer_id| references | null: false
+| prefecture_id        | references | null: false
+| scheduled_delivery_id| references | null: false            
 
 ## Association
   has_one : order
@@ -33,7 +38,8 @@
 ## deliveriesテーブル
 | columm              | type       | options
 | ------------------- | ---------  | ---------
-| postal_code         | integer    | null: false
+| postal_code         | string     | null: false
+| prefecture_id       | references | null: false
 | city                | string     | null: false
 | address             | string     | null: false
 | building            | string     |
