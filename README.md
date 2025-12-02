@@ -4,12 +4,12 @@
 | nickname          | string    | null: false
 | email             | string    | null: false
 | password          | string    | null: false
-| firstnmame_kanji  | string    | null: false
+| firstname_kanji   | string    | null: false
 | lastname_kanji    | string    | null: false
 | firstname_kana    | string    | null: false
 | lastname_kana     | string    | null: false
-| birth_month       | date      | null: false
-| birth_day         | date      | null: false
+| birth_date        | date      | null: false
+
 
 ## Association
   has_many :items
@@ -20,29 +20,28 @@
 
 | columm              | type       | options
 | ------------------- | ---------  | ---------
-| name                | text       | null: false
+| name                | string     | null: false
 | content             | text       | null: false
 | price               | integer    | null: false
 | user                | references | null: false,foreign_key: true
 
 ## Association
   has_one : order
-  belong_to :user
+  belongs_to :user
 
 
 ## deliveriesテーブル
 | columm              | type       | options
 | ------------------- | ---------  | ---------
 | postal_code         | integer    | null: false
-| city                | text       | null: false
-| address             | text       | null: false
-| building            | text       |
-| phone               | integer    | null: false
-| user                | references | null: false,foreign_key: true
-| item                | references | null: false,foreign_key: true
+| city                | string     | null: false
+| address             | string     | null: false
+| building            | string     |
+| phone               | string     | null: false
+| order               | references | null: false,foreign_key: true
 
 ## Association
-  belong_to order
+  belongs_to :order
 
 
 ## ordersテーブル
@@ -53,6 +52,6 @@
 
 
 ## Association
-  belong_to :item
-  belong_to :user
-  has_one :deliveries
+  belongs_to :item
+  belongs_to :user
+  has_one :delivery

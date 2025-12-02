@@ -15,10 +15,10 @@
                 <mxCell id="66" value="Usersテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="40" y="190" width="160" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="67" value="・nickname&lt;div&gt;・email&lt;/div&gt;&lt;div&gt;・password&lt;/div&gt;&lt;div&gt;・firstname_kanji&lt;/div&gt;&lt;div&gt;・lastname_kanji&lt;/div&gt;&lt;div&gt;・firstname_kana&lt;/div&gt;&lt;div&gt;・lastname_kana&lt;/div&gt;&lt;div&gt;・birth_month&lt;/div&gt;&lt;div&gt;・birth_day&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="66">
+                <mxCell id="67" value="・nickname&lt;div&gt;・email&lt;/div&gt;&lt;div&gt;・password&lt;/div&gt;&lt;div&gt;・firstname_kanji&lt;/div&gt;&lt;div&gt;・lastname_kanji&lt;/div&gt;&lt;div&gt;・firstname_kana&lt;/div&gt;&lt;div&gt;・lastname_kana&lt;/div&gt;&lt;div&gt;・birth_date&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="66">
                     <mxGeometry y="26" width="160" height="134" as="geometry"/>
                 </mxCell>
-                <mxCell id="70" value="deliveriesテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+                <mxCell id="70" value="Deliveriesテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="440" y="515" width="160" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="71" value="・postal-code&lt;div&gt;・city&lt;/div&gt;&lt;div&gt;・address&lt;/div&gt;&lt;div&gt;・building&lt;/div&gt;&lt;div&gt;・phone&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="70">
@@ -95,7 +95,7 @@
                         <mxPoint x="445" y="370" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="124" value="orderテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+                <mxCell id="124" value="Orderテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="190" y="480" width="160" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="125" value="・user_id&lt;div&gt;・item_id&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="124">
