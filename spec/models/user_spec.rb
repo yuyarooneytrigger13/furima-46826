@@ -69,7 +69,13 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
       end
-      it 'lastname_kanjiが空では登録できない' do
+      it 'passwordは全角では登録できない' do
+        @user.password = 'ああああああ'
+        @user.password_confirmation = 'ああああああ'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
+      end
+        it 'lastname_kanjiが空では登録できない' do
         @user.lastname_kanji = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Lastname kanji can't be blank")
@@ -78,6 +84,16 @@ RSpec.describe User, type: :model do
         @user.firstname_kanji = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Firstname kanji can't be blank")
+      end
+      it 'lastnmae_kanjiに半角文字が含まれていると登録できない' do
+        @user.lastname_kanji = 'yamada'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Lastname kanji is invalid')
+      end
+      it 'firstname_kanjiに半角文字が含まれていると登録できない' do
+        @user.firstname_kanji = 'tarou'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Firstname kanji is invalid')
       end
       it 'lastname_kanaが空では登録できない' do
         @user.lastname_kana = ''
@@ -88,6 +104,16 @@ RSpec.describe User, type: :model do
         @user.firstname_kana = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Firstname kana can't be blank")
+      end
+      it 'lastname_kanaにカタカナ以外(ひらがな・漢字・英数字など)が含まれていると登録できない' do
+        @user.lastname_kana = '山田'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Lastname kana is invalid')
+      end
+      it 'firstname_kanaにカタカナ以外(ひらがな・漢字・英数字など)が含まれていると登録できない' do
+        @user.firstname_kana = '太郎'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Firstname kana is invalid')
       end
       it 'birth_dateが空では登録できない' do
         @user.birth_date = ''
