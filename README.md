@@ -28,7 +28,7 @@
 | condition_id         | integer    | null: false
 | shipping_fee_payer_id| integer    | null: false
 | prefecture_id        | integer    | null: false
-| scheduled_delivery_id| integer    | null: false            
+| schedule_delivery_id | integer    | null: false            
 
 ## Association
   has_one : order
