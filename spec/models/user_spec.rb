@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
-  end  
-  
+  end
+
   describe 'ユーザー新規登録' do
     context '新規登録できるとき' do
       it 'nickname、email、password、password_confirmation、lastname_kanji、firstname_kanji、lastname_kana、firstname_kana、birth_dateが存在すれば登録できる' do
@@ -75,7 +75,7 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
       end
-        it 'lastname_kanjiが空では登録できない' do
+      it 'lastname_kanjiが空では登録できない' do
         @user.lastname_kanji = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Lastname kanji can't be blank")
