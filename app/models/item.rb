@@ -7,20 +7,19 @@ class Item < ApplicationRecord
   belongs_to :schedule_delivery
 
   belongs_to :user
-  #has_one :order
+  # has_one :order
 
   has_one_attached :image
 
   validates :name, presence: true
   validates :content, presence: true
-  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+  validates :price, presence: true,
+                    numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   validates :image, presence: true
 
-  validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank"} 
-  validates :category_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :condition_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :shipping_fee_payer_id, numericality: { other_than: 1 , message: "can't be blank"}
-  validates :schedule_delivery_id, numericality: { other_than: 1 , message: "can't be blank"}
-  
-
+  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :condition_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :shipping_fee_payer_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :schedule_delivery_id, numericality: { other_than: 1, message: "can't be blank" }
 end

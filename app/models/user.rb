@@ -6,9 +6,9 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
   validates :password, format: { with: VALID_PASSWORD_REGEX }
 
-  JAPANESE_REGEX =/\A[ぁ-んァ-ヶー一-龥々ヴ]+\z/
+  JAPANESE_REGEX = /\A[ぁ-んァ-ヶー一-龥々ヴ]+\z/
   KATAKANA_REGEX = /\A[ァ-ヶー－]+\z/
-  
+
   validates :nickname, presence: true
   validates :firstname_kanji, presence: true, format: { with: JAPANESE_REGEX }
   validates :lastname_kanji, presence: true, format: { with: JAPANESE_REGEX }
@@ -16,8 +16,6 @@ class User < ApplicationRecord
   validates :lastname_kana, presence: true, format: { with: KATAKANA_REGEX }
   validates :birth_date, presence: true
 
-  #has_many :items
-  #has_many :orders
-
-
+  # has_many :items
+  # has_many :orders
 end
