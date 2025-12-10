@@ -12,7 +12,6 @@ FactoryBot.define do
     association :user
 
     after(:build) do |item|
-      # public/images/test_image.png にテスト用の画像を配置してください
       item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
     end
   end
