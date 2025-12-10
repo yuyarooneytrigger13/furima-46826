@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:index, :create]
-  before_action :redirect_if_ineligible, only: [:index, :create]
+  before_action :move_to_index, only: [:index, :create,]
 
   def index
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
   def create
     @order_form = OrderForm.new(order_params)
     if @order_form.valid?
-      pay_item
+        pay_item
       @order_form.save
       redirect_to root_path
     else
@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
     )
   end
 
-  def redirect_if_ineligible
+  def move_to_index
     redirect_to root_path if current_user.id == @item.user_id || @item.order.present?
   end
 end

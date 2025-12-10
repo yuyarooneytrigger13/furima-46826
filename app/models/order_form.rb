@@ -9,12 +9,12 @@ class OrderForm
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)" }
     validates :city
     validates :address
-    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "is invalid. Input only number" }
+    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "is invalid. Input only numbers" }
+    validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
   end
 
-  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
-
   def save
+    ActiveRecord::Base.transaction do
     order = Order.create(user_id: user_id, item_id: item_id)
     Delivery.create(
       order_id: order.id,
@@ -26,4 +26,5 @@ class OrderForm
       phone_number: phone_number
     )
   end
+end
 end
