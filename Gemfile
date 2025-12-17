@@ -76,6 +76,11 @@ end
 
 group :production do
   gem 'unicorn', '6.1.0'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 gem 'devise'
 gem 'mini_magick'
@@ -85,5 +90,4 @@ gem 'pry-rails'
 gem 'payjp'
 gem 'gon'
 gem "aws-sdk-s3", require: false
-
 gem "nokogiri", force_ruby_platform: true
